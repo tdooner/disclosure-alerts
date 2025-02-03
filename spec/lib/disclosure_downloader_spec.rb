@@ -28,7 +28,7 @@ RSpec.describe DisclosureDownloader do
         filerStateId: "1111",
         filerName: 'Foo bar for Mayor',
         title: "title",
-        filingDate: "2022-10-12T17:50:07.0000000-07:00",
+        filingDate: "#{Date.today - 1}T17:50:07.0000000-07:00",
         amendmentSequenceNumber: 0,
         amendedFilingId: nil,
         form: 36, # FPPC Form 496

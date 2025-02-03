@@ -22,10 +22,10 @@ class DisclosureDownloader
         puts "Syncing new filing: #{filing.inspect}"
       end
 
-      break if latest && latest == filing
       break if Date.today - filing.filed_at.to_date > 14
 
-      download_filing(filing)
+      download_filing(filing) if filing.new_record?
+      filing.save
 
       # If the filing was amended, but we haven't downloaded the original
       # un-amended filing yet, let's grab it now.
